@@ -1,0 +1,5 @@
+Packages is used to make code more structured and standardized and it is a must by go.
+
+The reason for why at least one package needs to be called main, as it is an entry-point for go itself.
+
+Differnece between module and packages: One module contains one-to-many packages.

@@ -1,0 +1,4 @@
+We must only use one main function, even though multiple files can have the package of main.
+
+Main package defines the entry point of a module; meanwhile,
+main function signifies which function should be executed first when the code is done compiling.

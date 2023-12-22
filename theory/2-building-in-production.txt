@@ -1,0 +1,6 @@
+Running in production has to be with go mod init, then go build
+
+Go build makes the application turn into an executable.
+
+The name is where we are going to expose our go code, for a module
+"go mod init github.com/jxnhiro/go-practice"

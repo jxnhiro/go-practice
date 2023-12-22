@@ -1,0 +1,5 @@
+In windows, go build will turn the module into an exe.
+While in mac, go build will turn the application into something without an extension
+
+The only way to run this is with ./<name of the application> 
+In this case ./go-practice
