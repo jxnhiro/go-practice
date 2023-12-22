@@ -3,3 +3,5 @@ While in mac, go build will turn the application into something without an exten
 
 The only way to run this is with ./<name of the application> 
 In this case ./go-practice
+
+Use go run . if module is existent, or there is a file of go.mod
