@@ -1,0 +1,4 @@
+Constant and variables are different.
+
+Constant must have an initial value and is immutable
+Variables do not need to have an initial value and is mutable

@@ -1,0 +1,4 @@
+Best initiation practice is to start with go mod init <any path of your choice> first
+
+This allows us to compile and build the go into an executable
+Not only that, this allows go to run the whole module.
