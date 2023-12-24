@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func profit_calculator() {
 	var revenue, expenses, taxRate float32
 
 	fmt.Print("Revenue: ")
