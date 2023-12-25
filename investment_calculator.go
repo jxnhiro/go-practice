@@ -9,20 +9,25 @@ func main() {
 	const inflationRate float64 = 2.5
 	var investmentAmount, years, expectedReturnRate float64
 
-	fmt.Print("Investment Amount: ")
+	outputText("Investment Amount: ")
 	fmt.Scan(&investmentAmount)
 
-	fmt.Print("Years Kept: ")
+	outputText("Years Kept: ")
 	fmt.Scan(&years)
 
-	fmt.Print("Expected Return Rate: ")
+	outputText("Expected Return Rate: ")
 	fmt.Scan(&expectedReturnRate)
 
 	futureValue := investmentAmount * math.Pow(1 + expectedReturnRate / 100, years)
 	futureRealValue := futureValue / math.Pow(1 + inflationRate / 100, years)
 
-	formattedFutureValue := fmt.Sprintf("Future Value: %.1f\n", futureValue)
-	formattedFutureRealValue := fmt.Sprintf("Future Value (adjusted for inflation): %.1f", futureRealValue)
+	formattedFutureValues := fmt.Sprintf(`Future Value: %.1f
+	Future Value (adjusted for inflation): %.1f`,futureValue, futureRealValue)
 
-	fmt.Print(formattedFutureValue, formattedFutureRealValue)
+	fmt.Print(formattedFutureValues)
+}
+
+// A function name should define what a function does
+func outputText(text string) {
+	fmt.Print(text)
 }
