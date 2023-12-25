@@ -11,7 +11,7 @@ func main() {
 
 	earningsBeforeTax, profit, ratio := calculateRatio(revenue, expenses, taxRate)
 
-	fmt.Print(earningsBeforeTax, profit, ratio)
+	fmt.Printf("Earnings Before Tax: %.1f\nProfit: %.1f\nRatio: %.3f\n", earningsBeforeTax, profit, ratio)
 }
 
 func getUserInput(infoText string) (output float32){
