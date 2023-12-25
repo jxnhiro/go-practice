@@ -1,0 +1,2 @@
+Written errors and returned errors should return an empty data
+AND errors should not crash the application / program.
