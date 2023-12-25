@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Pallinder/go-randomdata"
+)
 
 func presentOptions() {
-	fmt.Println("Welcome to Go Bank")
+	fmt.Println("Welcome to Go Bank", randomdata.PhoneNumber())
 	fmt.Println("What do you want to do?")
 	fmt.Println("1. Check balance?")
 	fmt.Println("2. Deposit money")

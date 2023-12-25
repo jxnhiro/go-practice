@@ -36,7 +36,6 @@ func main() {
 				fmt.Println("Invalid input, must be greater than 0.")
 				continue
 			}
-
 			accountBalance += depositAmount
 			fileops.WriteFloatToFile(accountBalance, accountBalanceFile)
 			fmt.Println("Balance updated! New amount:", accountBalance)

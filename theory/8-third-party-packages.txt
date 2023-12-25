@@ -1,0 +1,2 @@
+Use go get to install the packages from go.mod
+Use go get <with link> to install the specific package inside the system
