@@ -5,24 +5,19 @@ import (
 )
 
 func main() {
-	var revenue, expenses, taxRate float32
-
-	print("Revenue: ")
-	fmt.Scan(&revenue)
-
-	print("Expenses: ")
-	fmt.Scan(&expenses)
-
-	print("Tax Rate: ")
-	fmt.Scan(&taxRate)
+	var revenue float32 = getUserInput("Revenue: ")
+	var expenses float32 = getUserInput("Expenses: ")
+	var taxRate float32 = getUserInput("Tax Rate: ")
 
 	earningsBeforeTax, profit, ratio := calculateRatio(revenue, expenses, taxRate)
 
 	fmt.Print(earningsBeforeTax, profit, ratio)
 }
 
-func print(text string) {
-	fmt.Print(text)
+func getUserInput(infoText string) (output float32){
+	fmt.Print(infoText)
+	fmt.Scan(&output)
+	return output
 }
 
 func calculateRatio(revenue, expenses, taxRate float32) (earningsBeforeTax, profit, ratio float32){
