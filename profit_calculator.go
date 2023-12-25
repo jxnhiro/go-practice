@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func profit_calculator() {
 	var revenue float32 = getUserInput("Revenue: ")
 	var expenses float32 = getUserInput("Expenses: ")
 	var taxRate float32 = getUserInput("Tax Rate: ")
