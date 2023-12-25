@@ -7,7 +7,7 @@ import (
 
 const inflationRate float64 = 2.5
 
-func main() {
+func invetment_calculator() {
 	var investmentAmount, years, expectedReturnRate float64
 
 	outputText("Investment Amount: ")
