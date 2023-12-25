@@ -1,0 +1,3 @@
+Functions, and global variables are shared across one package.
+This does not happen with import though, imports are done individually per different file 
+even if they are in the same package.

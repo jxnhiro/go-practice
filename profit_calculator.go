@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func profit_calculator() {
 	revenue, err := getUserInput("Revenue: ")
 
 	if err != nil {
@@ -41,7 +41,7 @@ func main() {
 		fmt.Println("ERROR: ", err)
 		return
 	}
-	
+
 	fmt.Printf("Earnings Before Tax: %.1f\nProfit: %.1f\nRatio: %.3f\n", earningsBeforeTax, profit, ratio)
 }
 
