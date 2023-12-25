@@ -31,7 +31,7 @@ func writeBalanceToFile(balance float64) {
 	os.WriteFile(accountBalanceFile, []byte(balanceText), 0644)
 }
 
-func main() {
+func bank() {
 	var accountBalance, err = getBalanceFromFile()
 	
 	if err != nil {
