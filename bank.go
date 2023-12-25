@@ -18,11 +18,10 @@ func main() {
 		fmt.Print("Your choice: ")
 		fmt.Scan(&choice)
 
-		//Using boolean as a control structure
-		checkBalance := choice == 1
-		if checkBalance {
+		switch choice {
+		case 1:
 			fmt.Println("Your balance is:", accountBalance)
-		} else if choice == 2 {
+		case 2:
 			fmt.Print("Your deposit: ")
 			var depositAmount float64
 			fmt.Scan(&depositAmount)
@@ -34,7 +33,7 @@ func main() {
 
 			accountBalance += depositAmount
 			fmt.Println("Balance updated! New amount:", accountBalance)
-		} else if choice == 3 {
+		case 3:
 			fmt.Print("Withdrawal amount: ")
 			var withdrawAmount float64
 			fmt.Scan(&withdrawAmount)
@@ -49,11 +48,47 @@ func main() {
 
 			accountBalance -= withdrawAmount
 			fmt.Println("Balcne updated! New amount:", accountBalance)
-		} else {
+		default:
 			fmt.Println("Goodbye!")
-			break
+			fmt.Println("Thank you for the visit!")
+			return
 		}
-	}
 
-	fmt.Println("Thank you for the visit!")
+
+		// Using boolean as a control structure
+		// checkBalance := choice == 1
+		// if checkBalance {
+		// 	fmt.Println("Your balance is:", accountBalance)
+		// } else if choice == 2 {
+		// 	fmt.Print("Your deposit: ")
+		// 	var depositAmount float64
+		// 	fmt.Scan(&depositAmount)
+
+		// 	if depositAmount <= 0 {
+		// 		fmt.Println("Invalid input, must be greater than 0.")
+		// 		continue
+		// 	}
+
+		// 	accountBalance += depositAmount
+		// 	fmt.Println("Balance updated! New amount:", accountBalance)
+		// } else if choice == 3 {
+		// 	fmt.Print("Withdrawal amount: ")
+		// 	var withdrawAmount float64
+		// 	fmt.Scan(&withdrawAmount)
+
+		// 	if withdrawAmount <= 0 {
+		// 		fmt.Println("Invalid input, must be greater than 0.")
+		// 		continue
+		// 	} else if withdrawAmount > accountBalance {
+		// 		fmt.Println("Invalid amount, you can't withdraw more than you have.")
+		// 		continue
+		// 	}
+
+		// 	accountBalance -= withdrawAmount
+		// 	fmt.Println("Balcne updated! New amount:", accountBalance)
+		// } else {
+		// 	fmt.Println("Goodbye!")
+		// 	break
+		// }
+	}
 }
