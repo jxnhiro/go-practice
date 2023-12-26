@@ -13,6 +13,17 @@ type user struct {
 	createdAt time.Time
 }
 
+//Added receiving arguments
+func (u user) outputUserDetails () {
+
+	//This works, because pointers to struct is an exception of dereferencing.
+	//Go allows this.
+	fmt.Println(u.firstName, u.lastName, u.birthDate)
+
+	//Technically, it should be
+	// fmt.Println((*u).firstName,(*u).lastName,(*u).birthDate)
+}
+
 func main() {
 	userFirstName := getUserData("Please enter your first name: ")
 	userLastName := getUserData("Please enter your last name: ")
@@ -36,7 +47,8 @@ func main() {
 
 	// ... do something awesome with that gathered data!
 
-	fmt.Println(firstName, lastName, birthDate)
+	appUser.outputUserDetails()
+	// fmt.Println(firstName, lastName, birthDate)
 }
 
 func getUserData(promptText string) string {
