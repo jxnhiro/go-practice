@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func pointers() {
 	age := 32
 
 	var agePointer *int = &age
