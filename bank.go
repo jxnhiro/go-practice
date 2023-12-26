@@ -8,7 +8,7 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-func main() {
+func bank() {
 	var accountBalance, err = fileops.GetFloatFromFile(accountBalanceFile)
 	
 	if err != nil {
