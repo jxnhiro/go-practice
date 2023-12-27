@@ -30,11 +30,11 @@ type Note struct {
 
 func New(title, content string) (Note, error) {
 	if title == "" {
-		return nil, errors.New("no title found")
+		return Note{}, errors.New("no title found")
 	}
 	
 	if content == "" {
-		return nil, errors.New("no content found")
+		return Note{}, errors.New("no content found")
 	}
 
 	return Note{
