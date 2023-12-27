@@ -8,14 +8,14 @@ import (
 )
 
 func profit_calculator() {
-	revenue, err := getUserInput("Revenue: ")
+	revenue, err := getInput("Revenue: ")
 
 	if err != nil {
 		fmt.Println("ERROR: ", err)
 		return
 	}
 
-	expenses, err := getUserInput("Expenses: ")
+	expenses, err := getInput("Expenses: ")
 	
 	if err != nil {
 		fmt.Println("ERROR: ", err)
@@ -27,7 +27,7 @@ func profit_calculator() {
 		return
 	}
 
-	taxRate, err := getUserInput("Tax Rate: ")
+	taxRate, err := getInput("Tax Rate: ")
 
 	if err != nil {
 		fmt.Println("ERROR: ", err)
@@ -56,7 +56,7 @@ func saveCalculation(earningsBeforeTax, profit, ratio float32) (err error) {
 	return nil
 }
 
-func getUserInput(infoText string) (output float32, err error){
+func getInput(infoText string) (output float32, err error){
 	fmt.Print(infoText)
 	fmt.Scan(&output)
 

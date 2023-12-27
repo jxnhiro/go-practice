@@ -8,7 +8,7 @@ type str string
 func (text str) log () {
 	fmt.Println(text)
 }
-func main() {
+func custom_types() {
 	var name str = "Max"
 
 	name.log()
