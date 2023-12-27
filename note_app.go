@@ -10,6 +10,22 @@ import (
 	"github.com/jxnhiro/go-practice/todo"
 )
 
+type saver interface {
+	Save() error 
+}
+
+//Embedded type
+type outputtable interface {
+	saver
+	Display()
+}
+
+//Alternative syntax
+// type outputtable interface {
+// 	Save() error
+// 	Display()
+// }
+
 func main() {
 	title, content := getNoteData()
 	todoText := getTodoData()
@@ -28,25 +44,30 @@ func main() {
 		return
 	}
 
-	todo.Display()
-	todoErr = todo.Save()
+	noteOutputErr := outputData(note)
 
-	if todoErr != nil {
-		fmt.Println("Saving the TODO failed.")
+	if noteOutputErr != nil {
 		return
 	}
 
-	fmt.Println("Saving the TODO succeeded.")
+	outputData(todo)
+}
 
-	note.Display()
-	noteErr = note.Save()
+func outputData(data outputtable) error {
+	data.Display()
+	return saveData(data)
+}
 
-	if noteErr != nil {
-		fmt.Println("Saving the note failed.")
-		return
+func saveData(data saver) error {
+	err := data.Save()
+
+	if err != nil {
+		fmt.Println("Saving the data failed.")
+		return err
 	}
 
-	fmt.Println("Saving the note succeeded.")
+	fmt.Println("Saving the data succeeded.")
+	return nil
 }
 
 func getTodoData() (string) {
@@ -62,7 +83,7 @@ func getNoteData() (string, string) {
 
 func getUserInput(prompt string) (text string){
 	fmt.Printf("%v ", prompt)
-
+	
 	reader := bufio.NewReader(os.Stdin)
 	text, err := reader.ReadString('\n')
 
