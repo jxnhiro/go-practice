@@ -7,29 +7,50 @@ import (
 	"strings"
 
 	"github.com/jxnhiro/go-practice/note"
+	"github.com/jxnhiro/go-practice/todo"
 )
 
 func main() {
 	title, content := getNoteData()
+	todoText := getTodoData()
 
-	userNote, error := note.New(title, content)
+	todo, todoErr := todo.New(todoText)
+	
+	if todoErr != nil {
+		fmt.Println(todoErr)
+		return
+	}
+	
+	note, noteErr := note.New(title, content)
 
-	if error != nil {
-		fmt.Println(error)
+	if noteErr != nil {
+		fmt.Println(noteErr)
 		return
 	}
 
-	
-	userNote.Display()
+	todo.Display()
+	todoErr = todo.Save()
 
-	err := userNote.Save()
+	if todoErr != nil {
+		fmt.Println("Saving the TODO failed.")
+		return
+	}
 
-	if err != nil {
+	fmt.Println("Saving the TODO succeeded.")
+
+	note.Display()
+	noteErr = note.Save()
+
+	if noteErr != nil {
 		fmt.Println("Saving the note failed.")
 		return
 	}
 
 	fmt.Println("Saving the note succeeded.")
+}
+
+func getTodoData() (string) {
+	return getUserInput("Todo Text: ")
 }
 
 func getNoteData() (string, string) {
