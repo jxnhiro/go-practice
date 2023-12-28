@@ -27,6 +27,9 @@ type outputtable interface {
 // }
 
 func main() {
+	printSomething(1.0)
+	printSomething(false)
+
 	title, content := getNoteData()
 	todoText := getTodoData()
 
@@ -53,6 +56,18 @@ func main() {
 	outputData(todo)
 }
 
+//Any value or any type is allowed in Go with interface{}
+func printSomething(value interface{}) {
+	//Add type switches
+	switch value.(type){
+	case int:
+		fmt.Println("Integer: ", value)
+	case float64:
+		fmt.Println("Float: ", value)
+	case string:
+		fmt.Println("String: ", value)
+	}
+}
 func outputData(data outputtable) error {
 	data.Display()
 	return saveData(data)
