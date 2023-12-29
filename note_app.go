@@ -26,7 +26,7 @@ type outputtable interface {
 // 	Display()
 // }
 
-func main() {
+func note_app() {
 	printSomething(1.0)
 	printSomething(false)
 
@@ -58,6 +58,21 @@ func main() {
 
 //Any value or any type is allowed in Go with interface{}
 func printSomething(value interface{}) {
+	//To check if value is int, we can use
+	integerValue, ok := value.(int)
+
+	if ok {
+		fmt.Println("Integer: ", integerValue)
+		return
+	}
+
+	// integerValue, ok := value.(float64)
+
+	// if ok {
+	// 	fmt.Println("Integer: ", integerValue)
+	// 	return
+	// }
+
 	//Add type switches
 	switch value.(type){
 	case int:
