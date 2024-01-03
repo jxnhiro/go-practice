@@ -6,8 +6,8 @@ type Product struct {
 	price float64
 }
 
-func main() {
-	prices := []float64{}
+func lists() {
+	// prices := []float64{}
 	
 }
 // func main() {
