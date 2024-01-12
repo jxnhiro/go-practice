@@ -5,9 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/jxnhiro/go-practice/note"
-	"github.com/jxnhiro/go-practice/todo"
 )
 
 type saver interface {
@@ -26,61 +23,53 @@ type outputtable interface {
 // 	Display()
 // }
 
-func note_app() {
+func main() {
 	printSomething(1.0)
 	printSomething(false)
 
-	title, content := getNoteData()
-	todoText := getTodoData()
+	// title, content := getNoteData()
+	// todoText := getTodoData()
 
-	todo, todoErr := todo.New(todoText)
+	// todo, todoErr := todo.New(todoText)
 	
-	if todoErr != nil {
-		fmt.Println(todoErr)
-		return
-	}
+	// if todoErr != nil {
+	// 	fmt.Println(todoErr)
+	// 	return
+	// }
 	
-	note, noteErr := note.New(title, content)
+	// note, noteErr := note.New(title, content)
 
-	if noteErr != nil {
-		fmt.Println(noteErr)
-		return
-	}
+	// if noteErr != nil {
+	// 	fmt.Println(noteErr)
+	// 	return
+	// }
 
-	noteOutputErr := outputData(note)
+	// noteOutputErr := outputData(note)
 
-	if noteOutputErr != nil {
-		return
-	}
+	// if noteOutputErr != nil {
+	// 	return
+	// }
 
-	outputData(todo)
+	// outputData(todo)
 }
 
 //Any value or any type is allowed in Go with interface{}
 func printSomething(value interface{}) {
-	//To check if value is int, we can use
-	integerValue, ok := value.(int)
+	fmt.Println(value)
 
-	if ok {
-		fmt.Println("Integer: ", integerValue)
-		return
-	}
-
-	// integerValue, ok := value.(float64)
-
-	// if ok {
-	// 	fmt.Println("Integer: ", integerValue)
-	// 	return
-	// }
-
-	//Add type switches
-	switch value.(type){
+	switch value.(type) {
 	case int:
 		fmt.Println("Integer: ", value)
-	case float64:
-		fmt.Println("Float: ", value)
 	case string:
 		fmt.Println("String: ", value)
+	case float64:
+		fmt.Println("Float 64: ", value)
+	}
+
+	//Extracting type information from a value
+	typedVal, ok := value.(int)
+	if (!ok) {
+		fmt.Println(typedVal)
 	}
 }
 func outputData(data outputtable) error {
