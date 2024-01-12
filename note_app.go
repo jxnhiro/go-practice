@@ -23,7 +23,7 @@ type outputtable interface {
 // 	Display()
 // }
 
-func main() {
+func note_app() {
 	printSomething(1.0)
 	printSomething(false)
 
