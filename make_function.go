@@ -4,7 +4,7 @@ import "fmt"
 
 type floatMap map[string]float64 
 
-func main() {
+func make_function() {
 	foo := make([]string, 2, 4)
 	foo[0] = "Hello"
 	foo[1] = "Hi"
