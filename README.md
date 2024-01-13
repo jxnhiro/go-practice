@@ -1,4 +1,4 @@
-#Go Practice - Kenny Jinhiro
+# Go Practice - Kenny Jinhiro
 What I have learnt:
 1. Functions and Values
 2. Packages
