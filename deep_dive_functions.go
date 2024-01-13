@@ -4,7 +4,7 @@ import "fmt"
 
 type customFunctionType func(int) []int 
 
-func main() {
+func deep_dive_functions() {
 	numbers := []int{1,2,3,4}
 	double_number(&numbers)
 	fmt.Println(numbers)
