@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func variadic_functions() {
 	fmt.Println(sumUp(1,2,3,4,5))
 }
 
